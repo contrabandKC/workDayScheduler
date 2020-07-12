@@ -81,10 +81,42 @@ $("document").ready(function(){
     
     $(".saveBtn").click(function(event){
 
-        var toDO = $(this).parent().find("textarea")
-        VAR 
+        var toDO = $(this).parent().find("textarea")[0].value
+        var hourEl =  $(this).parent().find(".hour").text()
+
+        console.log(hourEl ,toDO)
 
 
-        console.log(toDO[0].value)
+        localStorage.setItem(hourEl, toDO)
     })
+
+
+
+    function initTodo(){
+        var todos = localStorage
+        var timeBlocks =$(".container")
+        
+
+        console.log(todos)
+        
+        for(var i = 0; i< todos.length; i++){
+            var time = todos.key(i)
+            var text = todos.getItem(time)
+            console.log(todos.key(i), todos.getItem(time))
+
+           $(".hour").each(function(index){
+               var hour=$(this).text()
+                // console.log($(this).text())
+
+                if(hour == time){
+                    console.log($(this).next().text(text))
+                }
+           })
+
+        } 
+        
+
+    }
+
+    initTodo()
 })
