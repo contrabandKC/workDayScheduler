@@ -1,7 +1,7 @@
 # workDayScheduler
 
 Create a work day scheduler for a nine hour shift.
-use time to keep track of what hours it is.
+use time to keep track of what hour the user is on.
 save the todo in local storage.
 added a button to clear the schedule
 
