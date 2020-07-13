@@ -25,7 +25,7 @@ $("document").ready(function(){
 
         // Start time and number of time blocks
         var timeSlots = 9
-        var startTime = 16
+        var startTime = 9
 
         if(startTime == 24){
             startTime = 0
@@ -74,28 +74,17 @@ $("document").ready(function(){
 
     }
 
-    function timeCheck(){
-
-        console.log(current == future)
-
-        
-
-
-
-    }
-
 
 
     timeBlocks()
 
     
     $(".saveBtn").click(function(event){
-
+        // adds save buttons
         var toDO = $(this).parent().find("textarea")[0].value
         var hourEl =  $(this).parent().find(".hour").text()
 
         console.log(hourEl ,toDO)
-
 
         localStorage.setItem(hourEl, toDO)
     })
@@ -103,6 +92,8 @@ $("document").ready(function(){
 
 
     function initTodo(){
+
+        // Adds todos from local storage
         var todos = localStorage
         var timeBlocks =$(".container")
         
